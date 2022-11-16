@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:demo_digitalin/Screens/Home_page.dart';
-import 'package:demo_digitalin/Screens/update_product.dart';
+import 'package:demo_digitalin/core/app_theme.dart';
+import 'package:demo_digitalin/src/view/screen/intro_screen.dart';
 
-void main()
-{
-  runApp(const demo_digitalin());
-}
-class demo_digitalin extends StatelessWidget {
-  const demo_digitalin({Key? key}) : super(key: key);
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        routes: {
-          HomePage.id : (context)=>const HomePage(),
-          UpdateProduct.id  :(context) =>  UpdateProduct()
-        },
-        initialRoute: HomePage.id,
+      debugShowCheckedModeBanner: false,
+      home: const IntroScreen(),
+      theme: AppTheme.lightTheme,
     );
-    
   }
 }
