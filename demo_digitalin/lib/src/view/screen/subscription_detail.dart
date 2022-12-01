@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:demo_digitalin/core/app_color.dart';
 import 'package:demo_digitalin/core/app_extension.dart';
 import 'package:demo_digitalin/core/app_style.dart';
-import 'package:demo_digitalin/src/controller/office_furniture_controller.dart';
+import 'package:demo_digitalin/src/controller/subscription_controller.dart';
 import 'package:demo_digitalin/src/view/widget/counter_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../model/furniture.dart';
@@ -168,9 +168,7 @@ class OfficeFurnitureDetailScreen extends StatelessWidget {
                 const SizedBox(height: 20),
                 Row(
                   children: [
-                    const Text("Color :",
-                        style: h2Style, textAlign: TextAlign.end),
-                    Expanded(child: ColorPicker(furniture.colors)),
+                 
                     Expanded(child: GetBuilder(
                       builder: (OfficeFurnitureController controller) {
                         return CounterButton(

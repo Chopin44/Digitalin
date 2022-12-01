@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:demo_digitalin/core/app_color.dart';
 import 'package:demo_digitalin/core/app_style.dart';
-import 'package:demo_digitalin/src/controller/office_furniture_controller.dart';
+import 'package:demo_digitalin/src/controller/subscription_controller.dart';
 import 'package:demo_digitalin/src/view/widget/counter_button.dart';
 import 'package:demo_digitalin/src/view/widget/empty_widget.dart';
 import '../widget/bottom_bar.dart';

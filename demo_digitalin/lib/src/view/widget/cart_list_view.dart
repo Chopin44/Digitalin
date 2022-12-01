@@ -38,23 +38,7 @@ class CartListView extends StatelessWidget {
                   const SizedBox(height: 5),
                   Text("Rp. ${furniture.price}", style: h2Style),
                   const SizedBox(height: 5),
-                  Row(
-                    children: [
-                      const Text("Color : ", style: h4Style),
-                      CircleAvatar(
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: furniture.colors
-                                  .where((element) => element.isSelected)
-                                  .toList()
-                                  .first
-                                  .color,
-                              shape: BoxShape.circle),
-                        ),
-                        radius: 15,
-                      )
-                    ],
-                  )
+                 
                 ],
               ),
               // Spacer(),

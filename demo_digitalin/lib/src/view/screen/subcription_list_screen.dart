@@ -3,7 +3,7 @@ import 'package:demo_digitalin/core/app_data.dart';
 import 'package:demo_digitalin/core/app_style.dart';
 import 'package:demo_digitalin/src/model/furniture.dart';
 import 'package:demo_digitalin/src/view/screen/subscription_detail.dart';
-import '../widget/furniture_list_view.dart';
+import '../widget/subscription_list_view.dart';
 
 class OfficeFurnitureListScreen extends StatelessWidget {
   const OfficeFurnitureListScreen({Key? key}) : super(key: key);

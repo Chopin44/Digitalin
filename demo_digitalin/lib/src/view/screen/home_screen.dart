@@ -6,7 +6,7 @@ import 'package:demo_digitalin/src/view/screen/cart_screen.dart';
 import 'package:demo_digitalin/src/view/screen/favorite_screen.dart';
 import 'package:demo_digitalin/src/view/screen/subcription_list_screen.dart';
 import 'package:demo_digitalin/src/view/screen/profile_screen.dart';
-import '../../controller/office_furniture_controller.dart';
+import '../../controller/subscription_controller.dart';
 
 final OfficeFurnitureController controller =
     Get.put(OfficeFurnitureController());

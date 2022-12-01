@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:demo_digitalin/core/app_asset.dart';
 import 'package:demo_digitalin/src/model/furniture.dart';
-import 'package:demo_digitalin/src/model/furniture_color.dart';
+import 'package:demo_digitalin/src/model/subcription_color.dart';
 import '../src/model/bottom_navigation_item.dart';
 
 class AppData {

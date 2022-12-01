@@ -1,4 +1,4 @@
-import 'package:demo_digitalin/src/model/furniture_color.dart';
+import 'package:demo_digitalin/src/model/subcription_color.dart';
 
 class Furniture {
   String title;

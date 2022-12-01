@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:demo_digitalin/src/view/widget/empty_widget.dart';
-import 'package:demo_digitalin/src/view/widget/furniture_list_view.dart';
+import 'package:demo_digitalin/src/view/widget/subscription_list_view.dart';
 import '../../../core/app_style.dart';
 import 'home_screen.dart';
 
