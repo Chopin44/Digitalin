@@ -4,7 +4,7 @@ import 'package:demo_digitalin/core/app_color.dart';
 import 'package:demo_digitalin/core/app_data.dart';
 import 'package:demo_digitalin/src/view/screen/cart_screen.dart';
 import 'package:demo_digitalin/src/view/screen/favorite_screen.dart';
-import 'package:demo_digitalin/src/view/screen/office_furniture_list_screen.dart';
+import 'package:demo_digitalin/src/view/screen/subcription_list_screen.dart';
 import 'package:demo_digitalin/src/view/screen/profile_screen.dart';
 import '../../controller/office_furniture_controller.dart';
 

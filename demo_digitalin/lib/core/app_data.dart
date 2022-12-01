@@ -14,18 +14,18 @@ class AppData {
     Furniture(
       quantity: 1,
       isFavorite: false,
-      title: 'Comhar All-in-One Standing Desk Glass',
+      title: 'Netflix 1 tahun',
       description: dummyText,
       price: 469.99,
       score: 3.5,
       images: [
-        AppAsset.comharStandingDesk1,
-        AppAsset.comharStandingDesk2,
-        AppAsset.comharStandingDesk3,
-        AppAsset.comharStandingDesk4,
-        AppAsset.comharStandingDesk5,
-        AppAsset.comharStandingDesk6,
-        AppAsset.comharStandingDesk7,
+        AppAsset.netflix,
+        // AppAsset.youtube,
+        // AppAsset.xbox,
+        // AppAsset.ps,
+        // AppAsset.hbo,
+        // AppAsset.appletv,
+        // AppAsset.disney,
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF616161), isSelected: true),
@@ -35,16 +35,12 @@ class AppData {
     Furniture(
       isFavorite: false,
       quantity: 1,
-      title: 'Ergonomic Gaming Desk with Mouse Pad',
+      title: 'Xbox GamePass 1 bulan',
       description: dummyText,
       price: 299.99,
       score: 4.5,
       images: [
-        AppAsset.ergonomicGamingDesk1,
-        AppAsset.ergonomicGamingDesk2,
-        AppAsset.ergonomicGamingDesk3,
-        AppAsset.ergonomicGamingDesk4,
-        AppAsset.ergonomicGamingDesk5,
+        AppAsset.xbox
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF5d4037), isSelected: true),
@@ -54,17 +50,12 @@ class AppData {
     Furniture(
       quantity: 1,
       isFavorite: false,
-      title: 'Kana Pro Bamboo Standing Desk',
+      title: 'Playstation Plus 3 Bulan',
       description: dummyText,
       price: 659.99,
       score: 3.0,
       images: [
-        AppAsset.kanaBambooDesk1,
-        AppAsset.kanaBambooDesk2,
-        AppAsset.kanaBambooDesk3,
-        AppAsset.kanaBambooDesk4,
-        AppAsset.kanaBambooDesk5,
-        AppAsset.kanaBambooDesk6,
+        AppAsset.ps,
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF616161), isSelected: true),
@@ -74,17 +65,12 @@ class AppData {
     Furniture(
       quantity: 1,
       isFavorite: false,
-      title: 'Soutien Ergonomic Office Chair',
+      title: 'HBO Max 1 Bulan',
       description: dummyText,
       price: 349.99,
       score: 2.5,
       images: [
-        AppAsset.soutienOfficeChair1,
-        AppAsset.soutienOfficeChair2,
-        AppAsset.soutienOfficeChair3,
-        AppAsset.soutienOfficeChair4,
-        AppAsset.soutienOfficeChair5,
-        AppAsset.soutienOfficeChair6,
+        AppAsset.hbo,
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF455a64), isSelected: true),
@@ -94,16 +80,13 @@ class AppData {
     Furniture(
       quantity: 1,
       isFavorite: false,
-      title: 'Theodore Standing Desk',
+      title: 'Apple TV 1 Bulan',
       description: dummyText,
       price: 499.99,
       score: 2.8,
       images: [
-        AppAsset.theodoreStandingDesk1,
-        AppAsset.theodoreStandingDesk2,
-        AppAsset.theodoreStandingDesk3,
-        AppAsset.theodoreStandingDesk4,
-        AppAsset.theodoreStandingDesk5,
+        AppAsset.appletv,
+        
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF5d4037), isSelected: true),
