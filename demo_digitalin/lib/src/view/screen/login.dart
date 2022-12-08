@@ -144,7 +144,10 @@ class _PageLoginState extends State<PageLogin> {
 
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        Navigator.of(_keyLoader.currentContext!, rootNavigator: false).pop();
+        Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const HomeScreen()),
+              );
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content: Text(
