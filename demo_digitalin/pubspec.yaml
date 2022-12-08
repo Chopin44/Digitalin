@@ -38,6 +38,9 @@ dependencies:
   flutter_rating_bar: ^4.0.0
   font_awesome_flutter: ^10.1.0
   simple_animations: ^4.0.1
+  http: ^0.13.5
+  email_validator: ^2.1.17
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

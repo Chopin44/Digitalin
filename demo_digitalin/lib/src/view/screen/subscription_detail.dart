@@ -8,7 +8,6 @@ import 'package:demo_digitalin/src/controller/subscription_controller.dart';
 import 'package:demo_digitalin/src/view/widget/counter_button.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../model/furniture.dart';
-import '../widget/color_picker.dart';
 import '../widget/rating_bar.dart';
 import 'home_screen.dart';
 
