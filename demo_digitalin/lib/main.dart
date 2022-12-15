@@ -1,4 +1,5 @@
 import 'package:demo_digitalin/src/view/screen/login.dart';
+import 'package:demo_digitalin/src/view/screen/register.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_digitalin/core/app_theme.dart';
 import 'package:demo_digitalin/src/view/screen/intro_screen.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PageLogin(),
+      home: const PageRegister(),
       theme: AppTheme.lightTheme,
     );
   }
