@@ -14,31 +14,12 @@ class PageRegister extends StatefulWidget {
   _PageRegisterState createState() => _PageRegisterState();
 }
 
-class HeadClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height);
-    path.quadraticBezierTo(
-        size.width / 4, size.height - 40, size.width / 2, size.height - 20);
-    path.quadraticBezierTo(
-        3 / 4 * size.width, size.height, size.width, size.height - 30);
-    path.lineTo(size.width, 0);
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
-}
-
 class _PageRegisterState extends State<PageRegister> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   var txtNama = TextEditingController();
   var txtEditEmail = TextEditingController();
   var txtEditPwd = TextEditingController();
   var txtUmur = TextEditingController();
-
 
   Widget inputNama() {
     return TextFormField(
@@ -75,8 +56,6 @@ class _PageRegisterState extends State<PageRegister> {
         ),
         style: const TextStyle(fontSize: 16.0, color: Colors.white));
   }
-
-
 
   Widget inputEmail() {
     return TextFormField(
@@ -116,7 +95,6 @@ class _PageRegisterState extends State<PageRegister> {
         ),
         style: const TextStyle(fontSize: 16.0, color: Colors.white));
   }
-
 
   Widget inputPassword() {
     return TextFormField(
@@ -203,7 +181,8 @@ class _PageRegisterState extends State<PageRegister> {
     if (_formKey.currentState!.validate()) {
       //If all data are correct then save data to out variables
       _formKey.currentState!.save();
-      doRegister(txtNama.text, txtEditEmail.text, txtEditPwd.text, txtUmur.text);
+      doRegister(
+          txtNama.text, txtEditEmail.text, txtEditPwd.text, txtUmur.text);
     }
   }
 
@@ -226,9 +205,9 @@ class _PageRegisterState extends State<PageRegister> {
       if (response.statusCode == 201) {
         print(response.body);
         Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const PageLogin()),
-              );
+          context,
+          MaterialPageRoute(builder: (_) => const PageLogin()),
+        );
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content: Text(
@@ -236,8 +215,6 @@ class _PageRegisterState extends State<PageRegister> {
             style: const TextStyle(fontSize: 16),
           )),
         );
-
-         
       }
     } catch (e) {
       Navigator.of(_keyLoader.currentContext!, rootNavigator: false).pop();
@@ -245,7 +222,6 @@ class _PageRegisterState extends State<PageRegister> {
       debugPrint('$e');
     }
   }
-
 
   @override
   void initState() {
@@ -264,38 +240,28 @@ class _PageRegisterState extends State<PageRegister> {
       body: Container(
         margin: const EdgeInsets.all(0),
         decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/intro.jpg"),
+              fit: BoxFit.cover,
+            ),
             gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Colors.blueAccent, Color.fromARGB(255, 21, 236, 229)],
-        )),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.blue, Color.fromARGB(255, 21, 236, 229)],
+            )),
         child: Form(
           key: _formKey,
           child: ListView(
             children: [
-              ClipPath(
-                clipper: HeadClipper(),
-                child: Container(
-                  margin: const EdgeInsets.all(0),
-                  width: double.infinity,
-                  height: 180,
-                  decoration: const BoxDecoration(
-                    color: Colors.amber,
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/logo-white-sm.png'),
-                    ),
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.all(8.0),
                 alignment: Alignment.center,
                 child: const Text(
-                  "Register APP",
+                  "Digitalin",
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 22,
+                      fontSize: 36,
                       fontWeight: FontWeight.bold),
                 ),
               ),
@@ -305,14 +271,13 @@ class _PageRegisterState extends State<PageRegister> {
                   child: Column(
                     children: <Widget>[
                       inputNama(),
-                      const SizedBox(height: 5.0),
+                      const SizedBox(height: 20.0),
                       inputEmail(),
-                      const SizedBox(height: 5.0),
+                      const SizedBox(height: 20.0),
                       inputPassword(),
-                      const SizedBox(height: 5.0),
+                      const SizedBox(height: 20.0),
                       inputUmur(),
-                      const SizedBox(height: 5.0),
-
+                      const SizedBox(height: 20.0),
                     ],
                   )),
               Container(
@@ -320,7 +285,7 @@ class _PageRegisterState extends State<PageRegister> {
                     const EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.black87,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                           side: const BorderSide(color: Colors.blue),
@@ -334,6 +299,57 @@ class _PageRegisterState extends State<PageRegister> {
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )),
+              ),
+              const SizedBox(
+                height: 12,
+              ),
+              Container(
+                child: RichText(
+                  text: TextSpan(
+                    text:
+                        "Dengan mendaftar saya menyetujui Aturan Pengunaan dan Kebijakan Tertentu",
+                    style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 36,
+              ),
+              Container(
+                child: Text(
+                  "Sudah punya Akun?",
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 12),
+              Column(
+                children: [
+                  ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black87,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            side: const BorderSide(color: Colors.blue),
+                          ),
+                          elevation: 10,
+                          minimumSize: const Size(200, 58)),
+                      onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const PageLogin()),
+                          ),
+                      icon: const Icon(Icons.arrow_right_alt),
+                      label: const Text(
+                        "LOGIN",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ))
+                ],
               )
             ],
           ),

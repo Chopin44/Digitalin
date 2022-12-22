@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:demo_digitalin/src/view/screen/register.dart';
+
 import '../screen/home_screen.dart';
 import '../widget/dialogs.dart';
 import 'package:email_validator/email_validator.dart';
@@ -12,24 +14,6 @@ class PageLogin extends StatefulWidget {
 
   @override
   _PageLoginState createState() => _PageLoginState();
-}
-
-class HeadClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height);
-    path.quadraticBezierTo(
-        size.width / 4, size.height - 40, size.width / 2, size.height - 20);
-    path.quadraticBezierTo(
-        3 / 4 * size.width, size.height, size.width, size.height - 30);
-    path.lineTo(size.width, 0);
-
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
 
 class _PageLoginState extends State<PageLogin> {
@@ -145,9 +129,9 @@ class _PageLoginState extends State<PageLogin> {
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
         Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const HomeScreen()),
-              );
+          context,
+          MaterialPageRoute(builder: (_) => const HomeScreen()),
+        );
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
               content: Text(
@@ -224,35 +208,25 @@ class _PageLoginState extends State<PageLogin> {
       body: Container(
         margin: const EdgeInsets.all(0),
         decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/intro.jpg"),
+              fit: BoxFit.cover,
+            ),
             gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment.bottomCenter,
-          colors: [Colors.blueAccent, Color.fromARGB(255, 21, 236, 229)],
-        )),
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.blueAccent, Color.fromARGB(255, 21, 236, 229)],
+            )),
         child: Form(
           key: _formKey,
           child: ListView(
             children: [
-              ClipPath(
-                clipper: HeadClipper(),
-                child: Container(
-                  margin: const EdgeInsets.all(0),
-                  width: double.infinity,
-                  height: 180,
-                  decoration: const BoxDecoration(
-                    color: Colors.amber,
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/logo-white-sm.png'),
-                    ),
-                  ),
-                ),
-              ),
               const SizedBox(height: 20),
               Container(
                 padding: const EdgeInsets.all(8.0),
                 alignment: Alignment.center,
                 child: const Text(
-                  "LOGIN APP",
+                  "LOGIN",
                   style: TextStyle(
                       color: Colors.white,
                       fontSize: 22,
@@ -275,7 +249,7 @@ class _PageLoginState extends State<PageLogin> {
                     const EdgeInsets.only(top: 35.0, left: 20.0, right: 20.0),
                 child: ElevatedButton.icon(
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.amber,
+                        backgroundColor: Colors.black,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20.0),
                           side: const BorderSide(color: Colors.blue),
@@ -289,6 +263,43 @@ class _PageLoginState extends State<PageLogin> {
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     )),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Container(
+                child: Text(
+                  "Belum punya Akun?",
+                  style: TextStyle(color: Colors.white),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Column(
+                children: [
+                  ElevatedButton.icon(
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black87,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                            side: const BorderSide(color: Colors.blue),
+                          ),
+                          elevation: 10,
+                          minimumSize: const Size(200, 58)),
+                      onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => const PageRegister()),
+                          ),
+                      icon: const Icon(Icons.arrow_right_alt),
+                      label: const Text(
+                        "Register",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ))
+                ],
               )
             ],
           ),
