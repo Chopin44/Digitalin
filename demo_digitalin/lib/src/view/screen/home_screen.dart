@@ -7,6 +7,7 @@ import 'package:demo_digitalin/src/view/screen/favorite_screen.dart';
 import 'package:demo_digitalin/src/view/screen/subcription_list_screen.dart';
 import 'package:demo_digitalin/src/view/screen/profile_screen.dart';
 import '../../controller/subscription_controller.dart';
+import 'checkout_screen.dart';
 
 final OfficeFurnitureController controller =
     Get.put(OfficeFurnitureController());
@@ -18,7 +19,9 @@ class HomeScreen extends StatelessWidget {
     OfficeFurnitureListScreen(),
     CartScreen(),
     FavoriteScreen(),
-    ProfileScreen()
+    ProfileScreen(),
+    CheckoutScreen()
+    
   ];
 
   @override

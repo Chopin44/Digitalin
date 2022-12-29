@@ -1,3 +1,4 @@
+import 'package:demo_digitalin/src/view/screen/home_screen.dart';
 import 'package:demo_digitalin/src/view/screen/login.dart';
 import 'package:demo_digitalin/src/view/screen/register.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const PageRegister(),
+      home: const HomeScreen(),
       theme: AppTheme.lightTheme,
     );
   }

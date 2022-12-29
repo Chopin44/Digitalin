@@ -9,12 +9,12 @@ import '../widget/bottom_bar.dart';
 import '../widget/cart_list_view.dart';
 import 'home_screen.dart';
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({Key? key}) : super(key: key);
+class CheckoutScreen extends StatelessWidget {
+  const CheckoutScreen({Key? key}) : super(key: key);
 
   PreferredSizeWidget _appBar() {
     return AppBar(
-      title: const Text("Cart", style: h2Style),
+      title: const Text("Bayar", style: h2Style),
       actions: [
         IconButton(
           splashRadius: 20.0,
