@@ -19,9 +19,8 @@ class HomeScreen extends StatelessWidget {
     OfficeFurnitureListScreen(),
     CartScreen(),
     FavoriteScreen(),
-    ProfileScreen(),
-    CheckoutScreen()
-    
+    Checkout(),
+    ProfileScreen()
   ];
 
   @override

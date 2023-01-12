@@ -1,3 +1,4 @@
+import 'package:demo_digitalin/src/model/furniture.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:demo_digitalin/core/app_color.dart';
@@ -34,6 +35,7 @@ class CartScreen extends StatelessWidget {
       appBar: _appBar(),
       bottomNavigationBar: Obx(
         () {
+            final List<Furniture> title;
           return BottomBar(
             priceLabel: "Total Harga",
             priceValue: "Rp.${controller.totalPrice.value.toStringAsFixed(2)}",
@@ -54,6 +56,7 @@ class CartScreen extends StatelessWidget {
                             orientation: Axis.vertical,
                             onIncrementSelected: () =>
                                 controller.increaseItem(furniture),
+                            //doCheckout(furniture),
                             onDecrementSelected: () =>
                                 controller.decreaseItem(furniture),
                             label: furniture.quantity);

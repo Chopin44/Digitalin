@@ -141,42 +141,6 @@ class _PageRegisterState extends State<PageRegister> {
     );
   }
 
-  Widget inputUmur() {
-    return TextFormField(
-        cursorColor: Colors.white,
-        keyboardType: TextInputType.emailAddress,
-        autofocus: false,
-        controller: txtUmur,
-        onSaved: (String? val) {
-          txtNama.text = val!;
-        },
-        decoration: InputDecoration(
-          hintText: 'Masukkan Umur',
-          hintStyle: const TextStyle(color: Colors.white),
-          labelText: "Masukkan Umur",
-          labelStyle: const TextStyle(color: Colors.white),
-          prefixIcon: const Icon(
-            Icons.man_outlined,
-            color: Colors.white,
-          ),
-          fillColor: Colors.white,
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25.0),
-            borderSide: const BorderSide(
-              color: Colors.white,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(25.0),
-            borderSide: const BorderSide(
-              color: Colors.white,
-              width: 2.0,
-            ),
-          ),
-        ),
-        style: const TextStyle(fontSize: 16.0, color: Colors.white));
-  }
-
   void _validateInputs() {
     if (_formKey.currentState!.validate()) {
       //If all data are correct then save data to out variables
@@ -192,14 +156,10 @@ class _PageRegisterState extends State<PageRegister> {
 
     try {
       final response = await http.post(
-          Uri.parse("https://mental-meds.up.railway.app/api/register"),
+          Uri.parse("http://localhost:5000/api/register"),
           headers: {'Content-Type': 'application/json; charset=UTF-8'},
-          body: jsonEncode({
-            "nama": nama,
-            "email": email,
-            "password": password,
-            "umur": umur
-          }));
+          body:
+              jsonEncode({"nama": nama, "email": email, "password": password}));
 
       final output = jsonDecode(response.body);
       if (response.statusCode == 201) {
@@ -275,8 +235,6 @@ class _PageRegisterState extends State<PageRegister> {
                       inputEmail(),
                       const SizedBox(height: 20.0),
                       inputPassword(),
-                      const SizedBox(height: 20.0),
-                      inputUmur(),
                       const SizedBox(height: 20.0),
                     ],
                   )),

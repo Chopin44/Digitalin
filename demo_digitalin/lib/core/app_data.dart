@@ -39,9 +39,7 @@ class AppData {
       description: dummyText,
       price: 299.99,
       score: 4.5,
-      images: [
-        AppAsset.xbox
-      ],
+      images: [AppAsset.xbox],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF5d4037), isSelected: true),
         FurnitureColor(color: const Color(0xFF424242)),
@@ -86,7 +84,6 @@ class AppData {
       score: 2.8,
       images: [
         AppAsset.appletv,
-        
       ],
       colors: <FurnitureColor>[
         FurnitureColor(color: const Color(0xFF5d4037), isSelected: true),
@@ -100,6 +97,8 @@ class AppData {
     BottomNavigationItem(
         const Icon(Icons.add_shopping_cart_rounded), 'Shopping cart'),
     BottomNavigationItem(const Icon(Icons.bookmark), 'Favorite'),
+    BottomNavigationItem(
+        const Icon(Icons.shopping_cart_checkout_rounded), 'Orderan'),
     BottomNavigationItem(const Icon(Icons.person), 'Profile')
   ];
 }

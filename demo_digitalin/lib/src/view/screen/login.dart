@@ -118,13 +118,13 @@ class _PageLoginState extends State<PageLogin> {
     Dialogs.loading(context, _keyLoader, "Proses ...");
 
     try {
-      final response = await http.post(
-          Uri.parse("https://mental-meds.up.railway.app/api/login"),
-          headers: {'Content-Type': 'application/json; charset=UTF-8'},
-          body: jsonEncode({
-            "email": email,
-            "password": password,
-          }));
+      final response =
+          await http.post(Uri.parse("http://localhost:5000/api/login"),
+              headers: {'Content-Type': 'application/json; charset=UTF-8'},
+              body: jsonEncode({
+                "email": email,
+                "password": password,
+              }));
 
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {

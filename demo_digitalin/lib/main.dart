@@ -1,3 +1,4 @@
+import 'package:demo_digitalin/src/view/screen/checkout_screen.dart';
 import 'package:demo_digitalin/src/view/screen/home_screen.dart';
 import 'package:demo_digitalin/src/view/screen/login.dart';
 import 'package:demo_digitalin/src/view/screen/register.dart';
